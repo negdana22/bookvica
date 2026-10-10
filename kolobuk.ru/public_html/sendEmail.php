@@ -1,51 +1,54 @@
 <?php
-ini_set('display_errors', 1);
+ini_set('display_errors', '0');
 error_reporting(E_ALL);
 
-// Получение данных из формы
-$username = $_POST["username"];
-$email = $_POST["email"];
-$message = $_POST["message"];
-$captchaDigits = $_POST["captchaDigits"];
+function field($key) {
+    if (!isset($_POST[$key]) || !is_string($_POST[$key])) {
+        return '';
+    }
+    return trim($_POST[$key]);
+}
 
-error_log("Username: " . $username);
-error_log("Email: " . $email);
-error_log("Message: " . $message);
-error_log("CaptchaDigits: " . $captchaDigits);
+function has_header_break($value) {
+    return preg_match('/[\r\n]/', $value) === 1;
+}
 
-// Отправка письма на указанные адреса
-$toEmails = array("negdana22@gmail.com","iriy999@gmail.com");
-$subject = "Новое сообщение от $username";
-$messageBody = "Имя: $username\nEmail: $email\nСообщение: $message";
+$username = field('username');
+$email = field('email');
+$message = field('message');
 
-// Дополнительные заголовки
-$headers = "From: test@a0915135.xsph.ru\r\n";
+if ($username === '' || has_header_break($username) || strlen($username) > 200) {
+    http_response_code(400);
+    echo 'error';
+    exit;
+}
+
+if ($email === '' || has_header_break($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    echo 'error';
+    exit;
+}
+
+if ($message === '' || strlen($message) > 5000) {
+    http_response_code(400);
+    echo 'error';
+    exit;
+}
+
+$from = 'test@a0915135.xsph.ru';
+$subject = 'Новое сообщение с сайта Колобук';
+$messageBody = "Имя: $username\nEmail: $email\n\n$message";
+$headers = "From: $from\r\n";
 $headers .= "Reply-To: $email\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-// Установка явного адреса отправителя (Return-Path)
-ini_set("sendmail_from", $email);
-
-// Добавление дополнительных параметров к mail
-$additional_parameters = "-oi -f $email";
-
-// Отправка письма
-$success = true; // Флаг успешной отправки письма
+$toEmails = array('negdana22@gmail.com', 'iriy999@gmail.com');
+$success = true;
 
 foreach ($toEmails as $toEmail) {
-    if (!mail($toEmail, $subject, $messageBody, $headers, $additional_parameters)) {
-        // Лог: Ошибка при отправке письма на адрес $toEmail
-        error_log("Ошибка при отправке письма на адрес $toEmail");
-        file_put_contents('log.txt', "Ошибка при отправке письма на адрес $toEmail\n", FILE_APPEND);
-        $success = false; // Установка флага ошибки
+    if (!mail($toEmail, $subject, $messageBody, $headers)) {
+        $success = false;
     }
 }
 
-if ($success) {
-    // Если не было ошибок, выводим "success"
-    echo "success";
-} else {
-    // Если были ошибки, вы можете вернуть текст ошибки или что-то еще
-    error_log("Ошибка при отправке данных на сервер.");
-}
-?>
+echo $success ? 'success' : 'error';

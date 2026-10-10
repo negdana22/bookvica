@@ -11,12 +11,27 @@ function onPageLoad() {
 
     if (page === "2" || page === "3") {
         loadAndPlayMusic(page);
-
+    } else if (page && /^[a-z0-9][a-z0-9._-]*\.txt$/i.test(page)) {
+        loadContent(page);
     }
 }
 
 
 window.onload = onPageLoad
+
+function bindSpreadCardsContinue() {
+    var next = document.querySelector(".page-result2");
+    var cards = document.querySelectorAll(".four-cards .first-card, .four-cards .second-card, .four-cards .third-card, .four-cards .fourth-card, .four-cards-2 .first-card, .four-cards-2 .second-card, .four-cards-2 .third-card, .four-cards-2 .fourth-card");
+    if (!next || !cards.length) {
+        return;
+    }
+    cards.forEach(function (card) {
+        card.onclick = function (event) {
+            event.preventDefault();
+            next.click();
+        };
+    });
+}
 
 function loadContent(page) {
     var mainContent = document.getElementById("mainContent")
@@ -40,14 +55,14 @@ function loadContent(page) {
             
             
             // Добавим проверку на страницу 2 и 3 после загрузки контента
-            if ( page === "main.html" || page === "privacy_policy.txt" || page === "user_agreement.txt" || page === "game1.txt" || page === "game5.txt" || page === "index.txt" || page === "game4.txt" || page === "reslult-2.txt" || page === "reslult-3.txt" || page === "reslult-4.txt" || page === "result.txt") {
+            if ( page === "main.html" || page === "privacy_policy.txt" || page === "user_agreement.txt" || page === "game1.txt" || page === "game5.txt" || page === "index.txt" || page === "game4.txt" || page === "reslult-2.txt" || page === "reslult-3.txt" || page === "reslult-4.txt" || page === "result.txt" || page === "modes.txt" || page === "day1.txt" || page === "day-index.txt" || page === "day-result.txt") {
                 closesArrow()
                 console.log('выполнено1')
 
                 
             }
 
-            if ( page === "game1.txt" || page === "user_agreement.txt" || page === "privacy_policy.txt" || page === "game5.txt" || page === "index.txt" || page === "game4.txt" || page === "reslult-2.txt" || page === "reslult-3.txt" || page === "reslult-4.txt" || page === "result.txt") {
+            if ( page === "game1.txt" || page === "user_agreement.txt" || page === "privacy_policy.txt" || page === "game5.txt" || page === "index.txt" || page === "game4.txt" || page === "reslult-2.txt" || page === "reslult-3.txt" || page === "reslult-4.txt" || page === "result.txt" || page === "modes.txt" || page === "day1.txt" || page === "day-index.txt" || page === "day-result.txt") {
                 const volumeSlider = document.getElementById('volumeSlider');
                 const volumeModeBtn = document.getElementById("volumeModeBtn");
                 const muteIcon = document.getElementById("muteIcon");
@@ -62,10 +77,15 @@ function loadContent(page) {
                 const closeArrow = document.getElementById('closeArrow');
             
                 
-                highVolumeIcon.style.display = "inline";
-                muteIcon.style.display = "none";
                 lowVolumeIcon.style.display = "none";
                 mediumVolumeIcon.style.display = "none";
+                if (typeof audio !== "undefined" && audio && audio.volume === 0) {
+                    highVolumeIcon.style.display = "none";
+                    muteIcon.style.display = "inline";
+                } else {
+                    highVolumeIcon.style.display = "inline";
+                    muteIcon.style.display = "none";
+                }
                 playIcon.style.display = "inline";
                 pauseIcon.style.display = "none";
                 
@@ -73,42 +93,16 @@ function loadContent(page) {
             
                 volumeModeBtn.addEventListener("click", function () {
                     console.log("Volume Mode Button Clicked");
-                    const volumeIcons = document.getElementById("volumeIcons");
-            
-                    if (audio.volume === 0 && audio2.volume === 0) {
-                        audio.volume = 0.1;
-                        audio2.volume = 0.1;
-                        setVolumeToOtherAudioInstances(0.1);
-                        muteIcon.style.display = "none";
-                        lowVolumeIcon.style.display = "inline";
-                        volumeControl.value = 0.1;
-                    } else if (audio.volume <= 0.2 && audio2.volume <= 0.2) {
-                        audio.volume = 0.5;
-                        audio2.volume = 0.5;
-                        setVolumeToOtherAudioInstances(0.5);
-                        lowVolumeIcon.style.display = "none";
-                        mediumVolumeIcon.style.display = "inline";
-                        volumeControl.value = 0.5;
-                    } else if (audio.volume <= 0.5 && audio2.volume <= 0.5) {
-                        audio.volume = 1;
-                        audio2.volume = 1;
-                        setVolumeToOtherAudioInstances(1);
-                        mediumVolumeIcon.style.display = "none";
-                        highVolumeIcon.style.display = "inline";
-                        volumeControl.value = 0.8;
-                    } else {
-                        audio.volume = 0;
-                        audio2.volume = 0;
-                        setVolumeToOtherAudioInstances(0);
-                        highVolumeIcon.style.display = "none";
-                        muteIcon.style.display = "inline";
-                        volumeControl.value = 0;
+                    const next = (typeof audio !== "undefined" && audio && audio.volume === 0) ? 1 : 0;
+                    if (typeof audio !== "undefined" && audio) {
+                        audio.volume = next;
                     }
-                    
-
-            
-                    updateVolumeBar(); // Добавлен вызов функции updateVolumeBar после изменения уровня громкости
-                    updateVolumeIcons(); // Вызывайте эту функцию для обновления иконок
+                    if (typeof audio2 !== "undefined" && audio2) {
+                        audio2.volume = next;
+                    }
+                    setVolumeToOtherAudioInstances(next);
+                    updateVolumeBar();
+                    updateVolumeIcons();
                 });
         
                 const volumeBar = document.getElementById("volume-bar");
@@ -172,33 +166,18 @@ function loadContent(page) {
                     }
                 });
             
-                function updateVolumeIcons(percentage) {
-                    if (audio.volume === 0 || audio2.volume === 0) {
-                        muteIcon.style.display = "inline";
-                        lowVolumeIcon.style.display = "none";
-                        mediumVolumeIcon.style.display = "none";
-                        highVolumeIcon.style.display = "none";
-                    } else if (audio.volume > 0 && audio.volume <= 0.2 || audio2.volume > 0 && audio2.volume <= 0.2) {
-                        lowVolumeIcon.style.display = "inline";
-                        mediumVolumeIcon.style.display = "none";
-                        highVolumeIcon.style.display = "none";
-                        muteIcon.style.display = "none";
-                    } else if (audio.volume > 0.2 && audio.volume <= 0.5 || audio2.volume > 0.2 && audio2.volume <= 0.5) {
-                        mediumVolumeIcon.style.display = "inline";
-                        lowVolumeIcon.style.display = "none";
-                        highVolumeIcon.style.display = "none";
-                        muteIcon.style.display = "none";
-                    } else {
-                        highVolumeIcon.style.display = "inline";
-                        lowVolumeIcon.style.display = "none";
-                        mediumVolumeIcon.style.display = "none";
-                        muteIcon.style.display = "none";
-                    }
-                    
-
+                function updateVolumeIcons() {
+                    const muted = typeof audio !== "undefined" && audio && audio.volume === 0;
+                    muteIcon.style.display = muted ? "inline" : "none";
+                    highVolumeIcon.style.display = muted ? "none" : "inline";
+                    lowVolumeIcon.style.display = "none";
+                    mediumVolumeIcon.style.display = "none";
                 }
             
                 function updateVolumeBar() {
+                    if (typeof audio === "undefined" || !audio) {
+                        return;
+                    }
                     const percentage = audio.volume * 100;
                     volumeFill.style.width = percentage + "%";
                     volumeControl.style.left = percentage + "%";
@@ -214,6 +193,14 @@ function loadContent(page) {
                 createGameBoard()
                 console.log('выполнено2')
 
+            }
+
+            if (page === "day-index.txt") {
+                createDayBoard()
+            }
+
+            if (page === "day-result.txt") {
+                getDayCard()
             }
 
             if (page === "result.txt") {
@@ -238,6 +225,10 @@ function loadContent(page) {
                 getcardfourth()
                 console.log('выполнено6')
 
+            }
+
+            if (page === "result.txt" || page === "reslult-2.txt" || page === "reslult-3.txt" || page === "reslult-4.txt") {
+                bindSpreadCardsContinue()
             }
 
             if ( page === "privacy_policy.txt" || page === "user_agreement.txt" || page === "feedback.txt") {

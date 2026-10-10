@@ -15,10 +15,15 @@ function audioplayer() {
     const closeArrow = document.getElementById('closeArrow');
 
     
-    highVolumeIcon.style.display = "inline";
-    muteIcon.style.display = "none";
     lowVolumeIcon.style.display = "none";
     mediumVolumeIcon.style.display = "none";
+    if (audio.volume === 0) {
+        highVolumeIcon.style.display = "none";
+        muteIcon.style.display = "inline";
+    } else {
+        highVolumeIcon.style.display = "inline";
+        muteIcon.style.display = "none";
+    }
     playIcon.style.display = "inline";
     pauseIcon.style.display = "none";
     audio.pause();
@@ -26,32 +31,9 @@ function audioplayer() {
 
     volumeModeBtn.addEventListener("click", function () {
         console.log("Volume Mode Button Clicked");
-        const volumeIcons = document.getElementById("volumeIcons");
-
-        if (audio.volume === 0) {
-            audio.volume = 0.1;
-            muteIcon.style.display = "none";
-            lowVolumeIcon.style.display = "inline";
-            volumeControl.value = 0.1;
-        } else if (audio.volume <= 0.2) {
-            audio.volume = 0.5;
-            lowVolumeIcon.style.display = "none";
-            mediumVolumeIcon.style.display = "inline";
-            volumeControl.value = 0.5;
-        } else if (audio.volume <= 0.5) {
-            audio.volume = 1;
-            mediumVolumeIcon.style.display = "none";
-            highVolumeIcon.style.display = "inline";
-            volumeControl.value = 0.8;
-        } else {
-            audio.volume = 0;
-            highVolumeIcon.style.display = "none";
-            muteIcon.style.display = "inline";
-            volumeControl.value = 0;
-        }
-
-        updateVolumeBar(); // Добавлен вызов функции updateVolumeBar после изменения уровня громкости
-        updateVolumeIcons(); // Вызывайте эту функцию для обновления иконок
+        audio.volume = audio.volume === 0 ? 1 : 0;
+        updateVolumeBar();
+        updateVolumeIcons();
     });
 
     const volumeBar = document.getElementById("volume-bar");
@@ -91,28 +73,12 @@ function audioplayer() {
         }
     });
 
-    function updateVolumeIcons(percentage) {
-        if (audio.volume === 0) {
-            muteIcon.style.display = "inline";
-            lowVolumeIcon.style.display = "none";
-            mediumVolumeIcon.style.display = "none";
-            highVolumeIcon.style.display = "none";
-        } else if (audio.volume > 0 && audio.volume <= 0.2) {
-            lowVolumeIcon.style.display = "inline";
-            mediumVolumeIcon.style.display = "none";
-            highVolumeIcon.style.display = "none";
-            muteIcon.style.display = "none";
-        } else if (audio.volume > 0.2 && audio.volume <= 0.5) {
-            mediumVolumeIcon.style.display = "inline";
-            lowVolumeIcon.style.display = "none";
-            highVolumeIcon.style.display = "none";
-            muteIcon.style.display = "none";
-        } else {
-            highVolumeIcon.style.display = "inline";
-            lowVolumeIcon.style.display = "none";
-            mediumVolumeIcon.style.display = "none";
-            muteIcon.style.display = "none";
-        }
+    function updateVolumeIcons() {
+        const muted = audio.volume === 0;
+        muteIcon.style.display = muted ? "inline" : "none";
+        highVolumeIcon.style.display = muted ? "none" : "inline";
+        lowVolumeIcon.style.display = "none";
+        mediumVolumeIcon.style.display = "none";
     }
 
     function updateVolumeBar() {

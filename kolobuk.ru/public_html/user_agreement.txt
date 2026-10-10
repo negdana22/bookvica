@@ -1,17 +1,13 @@
 <div class="game-start-title">
-    <a href="main.html"><img src="image\title-kolobuk.png" alt="Kolobuk Logo"></a>
+    <a href="main.html"><img src="image/title-kolobuk.png" alt="Kolobuk Logo"></a>
     <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn" for="menu__toggle">
         <div class="symbol">
-            <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-            <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
-            </svg>
-            <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-            <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
-            </svg>
-            <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-            <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
+            <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 5h16"/>
+                <path d="M4 12h16"/>
+                <path d="M4 19h16"/>
             </svg>
         </div>
         </label>
@@ -23,9 +19,11 @@
             </svg>
             
             </div>
-        <li><a class="menu__item" id="start-game" href="#" onclick="loadAndPlayMusic('game1.txt')"><p>Начать игру</p></a></li>
-        <li><a class="menu__item" id="kolobuk-zelo" href="#" onclick="loadAndPlayMusic('game5.txt')"><p>Колобук зело</p></a></li>
-        <li><a class="menu__item" id="contacts-call" href="#"><p>обратная связь</p></a></li>
+        <li><a class="menu__item" id="menu-home" href="#" onclick="loadContent('main.html')"><p>Главная</p></a></li>
+        <li><a class="menu__item" id="start-game" href="#" onclick="loadAndPlayMusic('modes.txt')"><p>Начать игру</p></a></li>
+        <li><a class="menu__item" id="bukvica-list" href="bukvica/index.html"><p>Образы буквиц</p></a></li>
+        <li><a class="menu__item" id="contacts-call" href="#" onclick="loadContent('feedback.txt')"><p>Обратная связь</p></a></li>
+        <li><a class="menu__item" id="menu-help" href="https://pay.cloudtips.ru/p/3703c8b9" target="_blank" rel="noopener noreferrer"><p>Помощь</p></a></li>
         </ul>
     </div>
 </div>
@@ -98,7 +96,7 @@
 
 <div class="footer">
     <div class="footer-link">
-        <a href="#" onclick="loadAndPlayMusic('game1.txt')">
+        <a href="#" onclick="loadAndPlayMusic('modes.txt')">
             <h4>Начать игру</h4>
         </a>
         <a href="#" onclick="loadContent('feedback.txt')">
@@ -112,7 +110,7 @@
         </a>
     </div> 
     <div class="footer-line">
-        <img src="image\line.png" alt="">
+        <img src="image/line.png" alt="">
     </div> 
     <div class="copywriter">
         <p>

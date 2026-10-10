@@ -1,1 +1,3 @@
-<?php include("/opt/index.php") ?>
+<?php
+header('Location: main.html', true, 302);
+exit;

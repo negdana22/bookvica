@@ -1,71 +1,42 @@
     <div class="game-start-title">
-        <a href="main.html"><img src="image\title-kolobuk.png" alt="Kolobuk Logo"></a>
-        <audio id="backgroundMusic" src="media\alizbar-last-fallen-leaf-ins.mp3" loop></audio>
+        <a href="main.html"><img src="image/title-kolobuk.png" alt="Kolobuk Logo"></a>
+        <audio id="backgroundMusic" src="media/alizbar-last-fallen-leaf-ins.mp3" loop></audio>
         <div class="audio-controls">
             <button id="playPauseBtn">
-                <svg id="playIcon"  xmlns="http://www.w3.org/2000/svg" width="12" height="15" viewBox="0 0 12 15" fill="none" style="display: none;">
-                    <path d="M0.388306 0.398438V14.3984L11.3883 7.39844L0.388306 0.398438Z" fill="#AFAFAF"/>
+                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/>
                 </svg>
-                <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                    <g clip-path="url(#clip0_939_1909)">
-                        <path d="M6 19.8978H10V5.89783H6V19.8978ZM14 5.89783V19.8978H18V5.89783H14Z" fill="#AFAFAF"/>
-                    </g>
-                    <defs>
-                        <clipPath id="clip0_939_1909">
-                            <rect width="24" height="24" fill="white" transform="translate(0 0.897827)"/>
-                        </clipPath>
-                    </defs>
+                <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="14" y="3" width="5" height="18" rx="1"/>
+                    <rect x="5" y="3" width="5" height="18" rx="1"/>
                 </svg>
             </button>
             <button id="volumeModeBtn">
               <div id="volumeIcons" style="display: flex;">
-                <div id="highVolumeIcon" style="display: none;">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                      <g clip-path="url(#clip0_825_1629)">
-                        <path d="M3.70764 9.98986V15.9899H7.70764L12.7076 20.9899V4.98986L7.70764 9.98986H3.70764ZM17.2076 12.9899C17.2076 11.2249 16.1876 9.69986 14.7076 8.96486V17.0199C16.1876 16.2799 17.2076 14.7549 17.2076 12.9899ZM14.7076 4.21986V6.28486C17.5976 7.14486 19.7076 9.81986 19.7076 12.9899C19.7076 16.1599 17.5976 18.8349 14.7076 19.6949V21.7599C18.7126 20.8499 21.7076 17.2749 21.7076 12.9899C21.7076 8.70486 18.7126 5.12986 14.7076 4.21986Z" fill="#AFAFAF"/>
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_825_1629">
-                          <rect width="24" height="24" fill="white" transform="translate(0.707642 0.989868)"/>
-                        </clipPath>
-                      </defs>
-                    </svg>
-              </div>
+                  <div id="highVolumeIcon" style="display: none;">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                      <path d="M16 9a5 5 0 0 1 0 6"/>
+                      <path d="M19.364 18.364a9 9 0 0 0 0-12.728"/>
+                      </svg>
+                  </div>
                   <div id="muteIcon" style="display: none;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                          <g clip-path="url(#clip0_824_1616)">
-                            <path d="M17.2076 12.7856C17.2076 11.0206 16.1876 9.49564 14.7076 8.76064V10.9706L17.1626 13.4256C17.1926 13.2156 17.2076 13.0006 17.2076 12.7856ZM19.7076 12.7856C19.7076 13.7256 19.5026 14.6106 19.1676 15.4256L20.6826 16.9406C21.3326 15.6956 21.7076 14.2856 21.7076 12.7856C21.7076 8.50564 18.7126 4.92564 14.7076 4.01564V6.08064C17.5976 6.94064 19.7076 9.61564 19.7076 12.7856ZM4.98264 3.78564L3.70764 5.06064L8.43264 9.78564H3.70764V15.7856H7.70764L12.7076 20.7856V14.0606L16.9626 18.3156C16.2926 18.8306 15.5376 19.2456 14.7076 19.4956V21.5606C16.0826 21.2456 17.3376 20.6156 18.3926 19.7506L20.4326 21.7856L21.7076 20.5106L12.7076 11.5106L4.98264 3.78564ZM12.7076 4.78564L10.6176 6.87564L12.7076 8.96564V4.78564Z" fill="#AFAFAF"/>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_824_1616">
-                              <rect width="24" height="24" fill="white" transform="translate(0.707642 0.785645)"/>
-                            </clipPath>
-                          </defs>
-                        </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                      <line x1="22" x2="16" y1="9" y2="15"/>
+                      <line x1="16" x2="22" y1="9" y2="15"/>
+                      </svg>
                   </div>
                   <div id="lowVolumeIcon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                          <g clip-path="url(#clip0_825_1623)">
-                            <path d="M7.70764 9.39844V15.3984H11.7076L16.7076 20.3984V4.39844L11.7076 9.39844H7.70764Z" fill="#AFAFAF"/>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_825_1623">
-                              <rect width="24" height="24" fill="white" transform="translate(0.707642 0.398438)"/>
-                            </clipPath>
-                          </defs>
-                        </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                      </svg>
                   </div>
                   <div id="mediumVolumeIcon" style="display: none;">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
-                          <g clip-path="url(#clip0_825_1626)">
-                            <path d="M19.2076 12.1942C19.2076 10.4292 18.1876 8.90415 16.7076 8.16915V16.2242C18.1876 15.4842 19.2076 13.9592 19.2076 12.1942ZM5.70764 9.19415V15.1942H9.70764L14.7076 20.1942V4.19415L9.70764 9.19415H5.70764Z" fill="#AFAFAF"/>
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_825_1626">
-                              <rect width="24" height="24" fill="white" transform="translate(0.707642 0.194153)"/>
-                            </clipPath>
-                          </defs>
-                        </svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                      <path d="M16 9a5 5 0 0 1 0 6"/>
+                      </svg>
                   </div>
               </div>
           </button>
@@ -78,14 +49,10 @@
           <input id="menu__toggle" type="checkbox" />
           <label class="menu__btn" for="menu__toggle">
             <div class="symbol">
-              <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-                <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
-              </svg>
-              <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-                <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
-              </svg>
-              <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="36" height="6" viewBox="0 0 36 6" fill="none">
-                <path d="M33 3.07324L3 3.07324" stroke="#AFAFAF" stroke-width="4.52746" stroke-linecap="round"/>
+              <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 5h16"/>
+                  <path d="M4 12h16"/>
+                  <path d="M4 19h16"/>
               </svg>
             </div>
           </label>
@@ -96,15 +63,17 @@
                   <path d="M21 12.0001H3" fill="none"/>
                 </svg>
               </div>
-            <li><a class="menu__item" id="start-game" href="#" onclick="loadContent('game1.txt')"><p>Начать игру</p></a></li>
-            <li><a class="menu__item" id="kolobuk-zelo" href="#" onclick="loadContent('game5.txt')"><p>Колобук зело</p></a></li>
-            <li><a class="menu__item" id="contacts-call" href="#" onclick="loadContent('feedback.txt')"><p>обратная связь</p></a></li>
+            <li><a class="menu__item" id="menu-home" href="#" onclick="loadContent('main.html')"><p>Главная</p></a></li>
+            <li><a class="menu__item" id="start-game" href="#" onclick="loadContent('modes.txt')"><p>Начать игру</p></a></li>
+            <li><a class="menu__item" id="bukvica-list" href="bukvica/index.html"><p>Образы буквиц</p></a></li>
+            <li><a class="menu__item" id="contacts-call" href="#" onclick="loadContent('feedback.txt')"><p>Обратная связь</p></a></li>
+            <li><a class="menu__item" id="menu-help" href="https://pay.cloudtips.ru/p/3703c8b9" target="_blank" rel="noopener noreferrer"><p>Помощь</p></a></li>
           </ul>
         </div>
      </div>
     <div class="big-book-2">
       <a class="page-to-result"         href="#" onclick="loadContent('result.txt')">
-        <img src="image\button-next.png" alt="">
+        <img src="image/button-next.png" alt="">
         <p>Назад</p>
       </a>
         <div class="four-cards-2">
@@ -118,7 +87,7 @@
             </div>
         </div>
         <div class="page-text-yav">
-          <div class="worlds-yav"><img src="image\yav-text.png" alt=""></div>
+          <div class="worlds-yav"><img src="image/yav-text.png" alt=""></div>
           <div class="worlds-text-yav">
             <p class="worlds-text-question">Что возможно осуществить прямо сейчас для решения поставленного вопроса.</p>
             <p class="worlds-text-title-yav"></p>
@@ -127,7 +96,7 @@
           </div>
         </div>
         <a class="page-result2"         href="#" onclick="loadContent('reslult-3.txt')">
-          <img src="image\button-next.png" alt="">
+          <img src="image/button-next.png" alt="">
           <p>Продолжить</p>
         </a>
     </div>

@@ -1,3 +1,4 @@
-User-agent: Yandex
-Sitemap: http://www.kolobuk.ru/sitemap.xml
-Crawl-delay: 7
+User-agent: *
+Allow: /
+
+Sitemap: https://kolobuk.ru/sitemap.xml

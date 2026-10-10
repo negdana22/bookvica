@@ -89,12 +89,22 @@ const cards = [
 
 // Перемешивание колоды
 function shuffle(array) {
-    return array.sort(() => Math.random() - 0.5);
+    const copy = array.slice();
+    for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        const tmp = copy[i];
+        copy[i] = copy[j];
+        copy[j] = tmp;
+    }
+    return copy;
 }
 
 // Функция для создания и отображения игрового поля
 function createGameBoard() {
     const gameBoard = document.getElementById('game-board');
+    if (!gameBoard) {
+        return;
+    }
     gameBoard.innerHTML = '';
 
     // Перемешиваем колоду
@@ -108,6 +118,38 @@ function createGameBoard() {
         cardElement.addEventListener('click', flipCard);
         gameBoard.appendChild(cardElement);
     }
+}
+
+function createDayBoard() {
+    const gameBoard = document.getElementById('game-board');
+    if (!gameBoard) {
+        return;
+    }
+    gameBoard.innerHTML = '';
+    const shuffledCards = shuffle(cards);
+    for (const card of shuffledCards) {
+        const cardElement = document.createElement('div');
+        cardElement.classList.add('card');
+        cardElement.dataset.id = card.id;
+        cardElement.addEventListener('click', flipDayCard);
+        gameBoard.appendChild(cardElement);
+    }
+}
+
+function flipDayCard(event) {
+    const selectedCard = event.target.closest('.card');
+    if (!selectedCard || selectedCard.classList.contains('front')) {
+        return;
+    }
+    if (document.querySelector('#game-board .card.front')) {
+        return;
+    }
+    selectedCard.classList.add('front');
+    const cardId = selectedCard.dataset.id;
+    setTimeout(function () {
+        localStorage.setItem('dayCard', cardId);
+        loadContent('day-result.txt');
+    }, 1700);
 }
 
 

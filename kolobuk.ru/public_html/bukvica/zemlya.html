@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Буквица Zемля</title>
+    <meta name="description" content="Буквица Zемля. Наполняйся силой на Родной Земле. Напои свою Душу силой Родных мест, где отдыхаешь сердцем. Куда бы ни несли тебя мечты, вернись к истокам - туд…">
+    <link rel="canonical" href="https://kolobuk.ru/bukvica/zemlya.html">
+    <link rel="icon" href="../image/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/bukvica.css">
+</head>
+<body class="bukvica-catalog">
+    <div class="game-start-title">
+        <a class="letter-back header-back" href="index.html" aria-label="Буквица: 49 образов">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m12 19-7-7 7-7"/>
+                <path d="M19 12H5"/>
+            </svg>
+        </a>
+        <a href="../main.html"><img src="../image/title-kolobuk.png" alt="Kolobuk Logo"></a>
+        <audio id="backgroundMusic" src="../media/alizbar-last-fallen-leaf-ins.mp3" loop></audio>
+        <div class="audio-controls">
+            <button type="button" id="playPauseBtn">
+                <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/>
+                </svg>
+                <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                    <rect x="14" y="3" width="5" height="18" rx="1"/>
+                    <rect x="5" y="3" width="5" height="18" rx="1"/>
+                </svg>
+            </button>
+            <button type="button" id="volumeModeBtn">
+                <div id="volumeIcons" style="display: flex;">
+                    <div id="highVolumeIcon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                        <path d="M16 9a5 5 0 0 1 0 6"/>
+                        <path d="M19.364 18.364a9 9 0 0 0 0-12.728"/>
+                        </svg>
+                    </div>
+                    <div id="muteIcon" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                        <line x1="22" x2="16" y1="9" y2="15"/>
+                        <line x1="16" x2="22" y1="9" y2="15"/>
+                        </svg>
+                    </div>
+                    <div id="lowVolumeIcon" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                        </svg>
+                    </div>
+                    <div id="mediumVolumeIcon" style="display: none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z"/>
+                        <path d="M16 9a5 5 0 0 1 0 6"/>
+                        </svg>
+                    </div>
+                </div>
+            </button>
+            <div id="volume-bar">
+                <div id="volume-fill"></div>
+                <div id="volume-control"></div>
+            </div>
+        </div>
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox" />
+            <label class="menu__btn" for="menu__toggle">
+                <div class="symbol">
+                    <svg class="your-svg" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 5h16"/>
+                        <path d="M4 12h16"/>
+                        <path d="M4 19h16"/>
+                    </svg>
+                </div>
+            </label>
+            <ul class="menu__box">
+                <div class="close-arrow" id="closeArrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15.5 6.00006L21.5 12.0001L15.5 18.0001" fill="none"/>
+                        <path d="M21 12.0001H3" fill="none"/>
+                    </svg>
+                </div>
+                <li><a class="menu__item" id="menu-home" href="../main.html"><p>Главная</p></a></li>
+                <li><a class="menu__item" id="start-game" href="../main.html?page=modes.txt"><p>Начать игру</p></a></li>
+                <li><a class="menu__item" id="bukvica-list" href="index.html"><p>Образы буквиц</p></a></li>
+                <li><a class="menu__item" id="contacts-call" href="../main.html?page=feedback.txt"><p>Обратная связь</p></a></li>
+                <li><a class="menu__item" id="menu-help" href="https://pay.cloudtips.ru/p/3703c8b9" target="_blank" rel="noopener noreferrer"><p>Помощь</p></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="letter-layout">
+            <img src="../image/big-card/Group 10.png" alt="Буквица Zемля">
+            <div class="letter-copy">
+                <a class="letter-back" href="index.html" aria-label="Буквица: 49 образов">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#AFAFAF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m12 19-7-7 7-7"/>
+                        <path d="M19 12H5"/>
+                    </svg>
+                </a>
+                <h1>Буквица Zемля</h1>
+                <p class="lead">Наполняйся силой на Родной Земле</p>
+                <p>Напои свою Душу силой Родных мест, где отдыхаешь сердцем. Куда бы ни несли тебя мечты, вернись к истокам - туда, где всё начиналось, где чувствуешь трепет Души. Вырвись на простор, подальше от суетных мыслей. Вновь пройди знакомыми путями и окунись в поток забытых светлых чувств. </p>
+            </div>
+        </div>
+        <nav class="pager">
+            <a href="selo.html">Sѣло</a>
+            <a href="izhe.html">Иже</a>
+        </nav>
+    </div>
+    <div class="footer">
+        <div class="footer-link">
+            <a href="../main.html?page=modes.txt">
+                <h4>Начать игру</h4>
+            </a>
+            <a href="index.html">
+                <h4>Образы буквицы</h4>
+            </a>
+            <a href="../main.html?page=feedback.txt">
+                <h4>Обратная связь</h4>
+            </a>
+            <a href="../main.html?page=user_agreement.txt">
+                <h4>Пользовательское соглашение</h4>
+            </a>
+            <a href="../main.html?page=privacy_policy.txt">
+                <h4>Политика конфиденциальности</h4>
+            </a>
+        </div>
+        <div class="footer-line">
+            <img src="../image/line.png" alt="">
+        </div>
+        <div class="copywriter">
+            <p>© Kolobuk.ru, 2024. Копирование материалов разрешено только с указанием активной ссылки на источник</p>
+        </div>
+    </div>
+    <script src="../js/bukvica-header.js"></script>
+</body>
+</html>

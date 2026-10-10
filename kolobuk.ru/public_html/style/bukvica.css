@@ -1,0 +1,298 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #1a1a1a;
+    color: #f8f8f8;
+    font-family: Inter, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+a {
+    color: #be956f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: none;
+}
+
+.wrap {
+    width: min(960px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 24px 0 48px;
+}
+
+body.bukvica-catalog {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.bukvica-catalog .wrap {
+    width: 1100px;
+    margin: 24px 170px 48px;
+    padding: 0;
+}
+
+@media (min-width: 1164px) {
+    html:has(body.bukvica-catalog) {
+        scrollbar-gutter: stable;
+    }
+}
+
+@container page (min-width: 1164px) {
+    .game-start-title {
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body.bukvica-catalog .wrap {
+        width: 1100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.game-start-title a:hover {
+    text-decoration: none;
+}
+
+.letter-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 32px;
+    margin: 0 0 16px;
+}
+
+.game-start-title > a.header-back {
+    display: none;
+}
+
+.letter-back:hover {
+    text-decoration: none;
+}
+
+.letter-back path {
+    transition: stroke 0.3s ease;
+}
+
+.letter-back:hover path {
+    stroke: #BE956F;
+}
+
+.topnav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    margin-bottom: 24px;
+}
+
+h1 {
+    color: #be956f;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0 0 8px;
+}
+
+.lead {
+    margin: 0 0 24px;
+    font-size: 18px;
+}
+
+.letter-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.letter-layout img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    flex: 0 0 auto;
+}
+
+.letter-copy {
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.letter-layout p:not(.lead) {
+    margin: 0;
+}
+
+.pager {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.letters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.letters a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: 100%;
+    padding: 12px;
+}
+
+.letters img {
+    width: 100%;
+    height: auto;
+}
+
+.letters span {
+    color: #f8f8f8;
+    font-size: 18px;
+}
+
+.letters small {
+    color: #afafaf;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@container page (min-width: 1164px) {
+    .letters a {
+        gap: 6px;
+    }
+
+    .letter-layout img {
+        max-width: none;
+    }
+}
+
+@media (max-width: 700px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .letter-layout {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1163.98px) {
+    .letter-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .letter-copy {
+        display: contents;
+    }
+
+    .letter-layout .letter-back {
+        order: 0;
+        align-self: flex-start;
+    }
+
+    .letter-layout h1,
+    .letter-layout .lead {
+        order: 1;
+        align-self: stretch;
+        width: 100%;
+    }
+
+    .letter-layout img {
+        order: 2;
+        align-self: center;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        flex: 0 0 auto;
+        margin: 0 0 24px;
+    }
+
+    .letter-layout p:not(.lead) {
+        order: 3;
+        align-self: stretch;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    body.bukvica-catalog .wrap {
+        width: 100%;
+        margin: 0 0 48px;
+        padding: 0;
+    }
+
+    .letters img {
+        width: auto;
+        max-width: 100%;
+        height: auto;
+        min-width: 0;
+        align-self: center;
+    }
+
+    body.bukvica-catalog .game-start-title > .audio-controls {
+        display: none;
+    }
+
+    body.bukvica-catalog .game-start-title > a.header-back {
+        display: flex;
+        margin: 0;
+    }
+
+    body.bukvica-catalog .wrap .letter-back {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    @container page (max-width: 1163.98px) {
+        body.bukvica-catalog .wrap {
+            width: auto;
+            margin: 0 32px 48px;
+            padding: 0;
+        }
+    }
+}
+
+body.bukvica-catalog {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.bukvica-catalog .wrap {
+    margin-bottom: 0;
+}
+
+body.bukvica-catalog .footer {
+    margin-top: auto;
+    margin-bottom: 32px;
+    padding-top: 120px;
+}
+
+body.bukvica-catalog .copywriter {
+    height: auto;
+    margin-bottom: 0;
+}
+
+body.bukvica-catalog .copywriter p {
+    margin-bottom: 0;
+}

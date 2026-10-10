@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>http://www.kolobuk.ru/</loc>
-  <lastmod>2024-02-06T19:09:28+00:00</lastmod>
-</url>
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://kolobuk.ru/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/as.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/bogi.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/vedi.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/glagoli.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/dobro.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/est.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/esm.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/zhivot.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/selo.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/zemlya.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/izhe.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/izhei.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/init.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/gerv.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/kako.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/lyudi.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/myslite.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/nash.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/on.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/pokoy.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/retsy.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/slovo.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/tverdo.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/uk.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ouk.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/fert.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/her.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ot.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/tsel.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/chervl.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/sha.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/shta.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/er.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ery.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/er-soft.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/yat.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/yun.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ar.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/edo.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/om.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/en.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/od.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/iota.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ota.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/ksi.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/psi.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/fita.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/izhitsa.html</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://kolobuk.ru/bukvica/izha.html</loc><lastmod>2026-10-06</lastmod></url>
 </urlset>
